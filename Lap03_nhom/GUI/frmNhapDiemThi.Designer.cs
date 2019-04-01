@@ -35,8 +35,6 @@
             this.cbSinhVien = new System.Windows.Forms.ComboBox();
             this.txtDiemThi = new System.Windows.Forms.TextBox();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.btnTaiLai = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,30 +94,13 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(253, 24);
+            this.btnThem.Location = new System.Drawing.Point(254, 80);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Location = new System.Drawing.Point(364, 24);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 7;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(253, 80);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 8;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTaiLai
             // 
@@ -153,15 +134,13 @@
             this.DiemThi.Name = "DiemThi";
             this.DiemThi.Width = 200;
             // 
-            // NhapDiemThi
+            // frmNhapDiemThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 302);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTaiLai);
-            this.Controls.Add(this.btnLuu);
-            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtDiemThi);
             this.Controls.Add(this.cbSinhVien);
@@ -169,8 +148,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "NhapDiemThi";
+            this.Name = "frmNhapDiemThi";
             this.Text = "Nhập Điểm Thi";
+            this.Load += new System.EventHandler(this.frmNhapDiemThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,8 +166,6 @@
         private System.Windows.Forms.ComboBox cbSinhVien;
         private System.Windows.Forms.TextBox txtDiemThi;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnTaiLai;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
