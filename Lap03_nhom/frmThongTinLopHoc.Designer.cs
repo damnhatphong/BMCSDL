@@ -1,6 +1,6 @@
 ﻿namespace Lap03_nhom
 {
-    partial class ThongTinLopHoc
+    partial class frmThongTinLopHoc
     {
         /// <summary>
         /// Required designer variable.

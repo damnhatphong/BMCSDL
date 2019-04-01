@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lap03_nhom
 {
-    public partial class ThongTinLopHoc : Form
+    public partial class frmQuanLySV : Form
     {
-        public ThongTinLopHoc()
+        public frmQuanLySV()
         {
             InitializeComponent();
         }

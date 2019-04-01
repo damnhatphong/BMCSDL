@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Lap03_nhom
 {
-    public partial class MenuChucNang : Form
+    public partial class frmThongTinLopHoc : Form
     {
-        public MenuChucNang()
+        public frmThongTinLopHoc()
         {
             InitializeComponent();
         }

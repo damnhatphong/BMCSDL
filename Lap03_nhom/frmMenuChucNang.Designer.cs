@@ -1,6 +1,6 @@
 ﻿namespace Lap03_nhom
 {
-    partial class MenuChucNang
+    partial class frmMenuChucNang
     {
         /// <summary>
         /// Required designer variable.
