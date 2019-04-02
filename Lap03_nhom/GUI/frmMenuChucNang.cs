@@ -17,7 +17,7 @@ namespace Lap03_nhom
         {
             InitializeComponent();
             MaNV = manv;
-            label1.Text = MaNV;
+            label1.Text = "Tên đăng nhập: "+MaNV;
         }
 
         private void button1_Click(object sender, EventArgs e)
