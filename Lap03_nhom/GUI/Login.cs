@@ -67,13 +67,21 @@ namespace Lap03_nhom
                     if (dataTable.Rows != null)
                     {
                         lbMessage.Text = "Login Successfully";
-                      
-                        frmMenuChucNang chucnang = new frmMenuChucNang(dataTable.Rows[0]["MANV"].ToString());
-                        chucnang.Show();
+
+                        /*frmMenuChucNang chucnang = new frmMenuChucNang(dataTable.Rows[0]["MANV"].ToString());
+                        chucnang.Show();*/
+
+                        using (frmMenuChucNang chucnang = new frmMenuChucNang(dataTable.Rows[0]["MANV"].ToString()))
+                            if (chucnang.ShowDialog() == DialogResult.OK)
+                            {
+                                this.Hide();
+                                Application.Run(new frmThongTinLopHoc(dataTable.Rows[0]["MANV"].ToString()));
+                                this.Show();
+                            }
 
                         da.Dispose();
                         conn.Close();
-                        this.Hide();
+
                         //reader2.Close();
                        
                     }

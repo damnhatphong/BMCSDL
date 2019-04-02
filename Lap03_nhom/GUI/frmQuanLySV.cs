@@ -23,21 +23,28 @@ namespace Lap03_nhom
 
         private void frmQuanLySV_Load(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=PHONG;Initial Catalog=QLSV_NHOM;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+            using (SqlConnection conn = new SqlConnection("Server=localhost;Database=QLSV;User ID=SA;Password=Moccacute36"))
             {
-                string queryString = "SELECT MASV,HOTEN,NGAYSINH,DIACHI FROM SINHVIEN WHERE MALOP = (SELECT MALOP FROM LOP WHERE MANV = N'" + MaNV + "')";
-                SqlCommand command2 = new SqlCommand(queryString, conn);
-                SqlDataAdapter ad = new SqlDataAdapter(command2);
-                DataTable dataTable = new DataTable();
-                BindingSource bindingsource = new BindingSource();
-                ad.Fill(dataTable);
-                bindingsource.DataSource = dataTable;
-               
-                dgvSinhVien.Columns.Clear();
-                dgvSinhVien.AutoGenerateColumns = true;
-                dgvSinhVien.DataSource = bindingsource;
-                cbNhanVien.Text = MaNV;
-                cbNhanVien.Enabled = false;
+                try
+                {
+                    string queryString = "SELECT sv.MASV,sv.HOTEN,sv.NGAYSINH,sv.DIACHI FROM SINHVIEN sv, LOP l WHERE sv.MALOP = l.MALOP and MANV = N'" + MaNV + "'";
+                    SqlCommand command2 = new SqlCommand(queryString, conn);
+                    SqlDataAdapter ad = new SqlDataAdapter(command2);
+                    DataTable dataTable = new DataTable();
+                    BindingSource bindingsource = new BindingSource();
+                    ad.Fill(dataTable);
+                    bindingsource.DataSource = dataTable;
+
+                    dgvSinhVien.Columns.Clear();
+                    dgvSinhVien.AutoGenerateColumns = true;
+                    dgvSinhVien.DataSource = bindingsource;
+                    cbNhanVien.Text = MaNV;
+                    cbNhanVien.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please solve this error: " + ex.Message, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

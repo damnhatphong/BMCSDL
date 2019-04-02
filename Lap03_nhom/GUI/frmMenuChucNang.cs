@@ -22,8 +22,6 @@ namespace Lap03_nhom
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*frmThongTinLopHoc lophoc = new frmThongTinLopHoc(MaNV);
-            lophoc.Show();*/
             using (frmThongTinLopHoc lophoc = new frmThongTinLopHoc(MaNV))
                 if (lophoc.ShowDialog() == DialogResult.OK)                
                     Application.Run(new frmThongTinLopHoc(MaNV));
@@ -32,21 +30,26 @@ namespace Lap03_nhom
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
+            this.Close();
+            /*using (Login login = new Login())
+                if (login.ShowDialog() == DialogResult.OK)
+                    Application.Run(new Login());*/
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmQuanLySV quanlysv = new frmQuanLySV(MaNV);
-            quanlysv.ShowDialog();
+            using(frmQuanLySV quanlysv = new frmQuanLySV(MaNV))
+                if (quanlysv.ShowDialog() == DialogResult.OK)
+                    Application.Run(new frmQuanLySV(MaNV));
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmNhapDiemThi nhapdiem = new frmNhapDiemThi(MaNV);
-            nhapdiem.ShowDialog();
+            using (frmNhapDiemThi nhapdiem = new frmNhapDiemThi(MaNV))
+                if (nhapdiem.ShowDialog() == DialogResult.OK)
+                    Application.Run(new frmNhapDiemThi(MaNV));
+                    
         }
     }
 }
