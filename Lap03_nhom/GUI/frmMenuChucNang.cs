@@ -22,8 +22,12 @@ namespace Lap03_nhom
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmThongTinLopHoc lophoc = new frmThongTinLopHoc(MaNV);
-            lophoc.ShowDialog();
+            /*frmThongTinLopHoc lophoc = new frmThongTinLopHoc(MaNV);
+            lophoc.Show();*/
+            using (frmThongTinLopHoc lophoc = new frmThongTinLopHoc(MaNV))
+                if (lophoc.ShowDialog() == DialogResult.OK)                
+                    Application.Run(new frmThongTinLopHoc(MaNV));
+                
         }
 
         private void button5_Click(object sender, EventArgs e)
