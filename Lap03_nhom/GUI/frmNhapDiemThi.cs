@@ -64,7 +64,7 @@ namespace Lap03_nhom
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection("Data Source=PHONG;Initial Catalog=QLSV_NHOM;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+            using (SqlConnection conn = new SqlConnection(connString))
             {
                 try
                 {
