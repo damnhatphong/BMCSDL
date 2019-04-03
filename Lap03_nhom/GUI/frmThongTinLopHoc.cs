@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,6 +14,7 @@ namespace Lap03_nhom
 {
     public partial class frmThongTinLopHoc : Form
     {
+        string connString = ConfigurationManager.ConnectionStrings["ConnectionStringQLSV"].ConnectionString;
         private string MaNV { get; set; }
         public frmThongTinLopHoc(string manv)
         {
@@ -23,7 +25,7 @@ namespace Lap03_nhom
 
         private void frmThongTinLopHoc_Load(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection("Server=localhost;Database=QLSV;User ID=SA;Password=Moccacute36"))
+            using (SqlConnection conn = new SqlConnection(connString))
             {
 
                 try

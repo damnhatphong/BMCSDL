@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,15 +15,17 @@ namespace Lap03_nhom
 {
     public partial class Login : Form
     {
+        string connString = ConfigurationManager.ConnectionStrings["ConnectionStringQLSV"].ConnectionString;
+
         public Login()
         {
             InitializeComponent();
 
         }
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection("Server=localhost;Database=QLSV;User ID=UserLogin;Password=qwe123!@#"))
+            using (SqlConnection conn = new SqlConnection(connString))
             {
                 /*try
                 {
